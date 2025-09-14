@@ -4,16 +4,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-  const a = document.getElementById('a').value;
-  const b = document.getElementById('b').value;
-  const c = document.getElementById('c').value;
+    const a = document.getElementById('a').value;
+    const b = document.getElementById('b').value;
+    const c = document.getElementById('c').value;
+    const d = document.getElementById('d').value;
     resultEl.textContent = 'Calculating...';
 
     try {
       const resp = await fetch('/api/add', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ a, b, c })
+  body: JSON.stringify({ a, b, c, d })
       });
 
       const data = await resp.json();

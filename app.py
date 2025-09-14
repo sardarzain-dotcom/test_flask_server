@@ -13,14 +13,16 @@ def add_numbers():
         a = data.get('a')
         b = data.get('b')
         c = data.get('c', 0)
+        d = data.get('d', 0)
         # Validate inputs
         a = float(a)
         b = float(b)
         c = float(c)
+        d = float(d)
     except Exception:
-        return jsonify({'error': 'Invalid input. Provide numeric values for a and b.'}), 400
+        return jsonify({'error': 'Invalid input. Provide numeric values for a, b, c and d.'}), 400
 
-    result = a + b + c
+    result = a + b + c + d
     return jsonify({'result': result})
 
 if __name__ == '__main__':
